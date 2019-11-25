@@ -1,29 +1,22 @@
 pipeline {
     agent any
-
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
-        stage ('Build Stage') {
-
+        stage('Build') {
             steps {
-                     sh 'php --version'
-                }
+                echo 'Building'
             }
         }
-
-        stage ('Testing Stage') {
-
-             steps {
-                     sh 'php --version'
-                }
+        stage('Test') {
+            steps {
+                echo 'Testing'
             }
         }
-
-
-        stage ('Deployment Stage') {
-             steps {
-                     sh 'php --version'
-                }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
             }
         }
     }
-}
