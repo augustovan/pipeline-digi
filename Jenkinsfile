@@ -1,1 +1,1 @@
-pipeline {   agent any {    stages {      stage('Build') {        node ('master'){          stage ('Build on master'){              echo 'Running on master'              sh 'hostname; touch file.master'            }           }          }            }      }}
+pipeline {   stages {      stage('Build') {        node ('master'){          stage ('staging'){              echo 'Running on master'              sh 'hostname; touch file.master'            }           }          }            }      }
