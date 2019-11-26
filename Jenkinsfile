@@ -1,1 +1,1 @@
-pipeline {   stages {      stage('Build') {        node ('master'){          stage ('staging'){              echo 'Running on master'              sh 'hostname; touch file.master'            }           }          }            }      }
+pipeline {   stages {      stage('State Build') {        node ('staging'){              echo 'Running on master'              sh 'hostname; touch file.master'            }          }           } }
